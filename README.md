@@ -1,2 +1,2 @@
-# hrshadhin.github.io
-showcase
+# ShowCase
+[Click ME](https://hrshadhin.github.io)
