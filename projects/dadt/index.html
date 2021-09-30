@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="H.R. Shadhin">
+    <meta name="keywords" content="open streetmap, delivery area, coverage area, polygon, circle, H.R. Shadhin">
+
+    <title>Delivery Area Debug Tools</title>
+    <link rel="shortcut icon" href="restaurant.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body onload="bodyLoaded()">
+    <div id="map-canvas"></div>
+    <div id="control-box">
+        <div class="form">
+            <label for="primary-radius" class="pr">Primary Radius:</label>
+            <input type="number" min="500" id="primary-radius" name="primary-radius" value="1000" placeholder="radius in meter">
+            <label for="secondary-radius" class="sr">Secondary Radius:</label>
+            <input type="number" min="1000" id="secondary-radius" name="secondary-radius" value="2000" placeholder="radius in meter">
+            <label>User Location(Lat,Lon):</label>
+            <div class="form-inline">
+                <input type="number" min="-90" max="90" id="user-lat" value="" placeholder="lat">
+                <input type="number" min="-180" max="180" id="user-lon" value="" placeholder="lon">
+            </div>
+            <label>Restaurant Location(Lat,Lon):</label>
+            <div class="form-inline">
+                <input type="number" min="-90" max="90" id="resto-lat" value="" placeholder="lat">
+                <input type="number" min="-180" max="180" id="resto-lon" value="" placeholder="lon">
+            </div>
+            <label class="cr">Restaurant Custom radius:</label>
+            <input type="number" min="100" id="custom-radius" name="custom-radius" value="" placeholder="radius in meter">
+            <label class="pg">Restaurant Polygon(Lat,Lon per line):</label>
+            <textarea id="polygon" cols="45" rows="15" placeholder="latitude1, longitude1
+latitude2, longitude2
+etc."></textarea>
+            <div>
+                <button class="button button-info" id="draw-it">Draw it!</button>
+                <button class="button button-danger float-right" id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
